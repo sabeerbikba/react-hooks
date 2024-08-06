@@ -9,7 +9,7 @@ import { useState } from 'react';
  * @returns {[any, function]} - A tuple containing the current value and a function to update the value.
  */
 
-export default function useLocalStorage(key, initialValue, maxLength = Infinity) {
+export default function useLocalStorageState(key, initialValue, maxLength = Infinity) {
     const storedValue = localStorage.getItem(key);
     const initial = storedValue ? JSON.parse(storedValue) : initialValue;
     const [value, setValue] = useState(initial);
@@ -29,10 +29,10 @@ export default function useLocalStorage(key, initialValue, maxLength = Infinity)
 }
 
 /* Usage example: *
-import useLocalStorage from '../hooks.js/useLocalStorage'
+import useLocalStorageState from '@hooks/useLocalStorageState';
 
 function App() {
-    const [count, setCount] = useLocalStorage('count', 25);
+    const [count, setCount] = useLocalStorageState('count', 25);
 
     return (
         <>
