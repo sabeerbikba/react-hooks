@@ -29,7 +29,7 @@ export default function useLocalStorageState(key, initialValue, maxLength = Infi
 }
 
 /* Usage example: *
-import useLocalStorageState from '@hooks/useLocalStorageState';
+import useLocalStorageState from '@/hooks/useLocalStorageState';
 
 function App() {
     const [count, setCount] = useLocalStorageState('count', 25);
